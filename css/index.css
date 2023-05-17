@@ -1,0 +1,110 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+    line-height: 30px;
+}
+
+body{
+    background: hsl(218, 23%, 16%);
+    font-size: 18px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 100vh;
+    width: 100vw;
+}
+
+main > h1{
+    color: white;
+    margin-bottom: 5px;
+}
+
+#character-length{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+#resultPass{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: hsl(217, 19%, 24%);
+    overflow: hidden;
+    color: gray;
+    font-size: 1em;
+    padding: 15px;
+    width: 38%;
+}
+
+#resultPass > img{
+    color: white;
+    width: 25px;
+}
+
+#resultPass > img:hover{
+    cursor: pointer;
+}
+
+#container{
+    background: hsl(217, 19%, 24%);   
+    color: white;
+    padding: 15px;
+    width: 38%;
+}
+
+#container-inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#container-strength{
+    display: flex;
+    padding: 7px 20px;
+    background: rgb(104, 104, 104);
+    justify-content: space-between;
+}
+
+#container-strength > h1{
+    font-size: 0.8em;
+    letter-spacing: 2px;
+}
+
+#container-strength > p{
+    color: rgb(255, 197, 37);
+    font-weight: 600;
+}
+
+#button-generate{
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 0.4em;
+}
+
+@media only screen and (max-width: 768px){
+    #resultPass{
+        width: 60%;
+    }
+
+    #container{
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 512px){
+    #resultPass{
+        width: 90%;
+    }
+
+    #container{
+        width: 90%;
+    }
+}

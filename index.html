@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+    <title> Password Generator App </title>
+</head>
+
+<body>
+    <main>
+        <h1> Password Generator </h1>
+        <div id="resultPass">
+            <p id="passwordGen"> PASSWORD </p>
+            <img src="img/icon1.svg" alt="Icon" onclick="copyToClipboard()">
+        </div>
+
+        <section id="container">
+            <div id="character-length">
+                <p> Character Length </p>
+                <p id="lengthSelected"> 0 </p>
+            </div>
+
+            <form id="container-inputs">
+                <input type="range" id="numberRange" name="numberRange" value="0" min="4" max="24" step="1" onchange="getLength()">
+                
+                <div>
+                    <input type="checkbox" id="uppercase" value="uppercase" name="options">
+                    <label for="uppercase"> Include uppercase letters </label>
+                </div>
+                <div>
+                    <input type="checkbox" id="lowercase" value="lowercase" name="options">
+                    <label for="lowercase"> Include lowercase letters </label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="numbers" value="numbers" name="options">
+                    <label for="numbers"> Include numbers </label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="symbols" value="symbols" name="options">
+                    <label for="symbols"> Include symbols </label>
+                </div>
+
+                <div id="container-strength">
+                    <h1> STRENGTH </h1>
+                    <p id="passComplex">  </p>
+                </div>
+
+                <input type="submit" id="button-generate" value="GENERATE" />
+            </form>
+        </section>
+    </main>
+
+    <script src="js/index.js"> </script>
+</body>
+
+</html>
