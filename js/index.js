@@ -1,6 +1,11 @@
+const formValues = document.getElementById('container-inputs')
+const passGen = document.getElementById('passwordGen');    
+const numberRange = document.getElementById('numberRange');
+const lenghSelected = document.getElementById('lengthSelected');
+const passComplex = document.getElementById('passComplex')
 let lengthPass = 4;
 
-const passGen = document.getElementById('passwordGen');
+const optionsChecked = []
 const items = {
     "uppercase": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
     "lowercase": "abcdefghijklmnopqrstuvwxyz",
@@ -16,20 +21,14 @@ const passComplexOptions = {
 }
 
 const getLength = (e) => {
-    const numberRange = document.getElementById('numberRange')
-    const lenghSelected = document.getElementById('lengthSelected')
     lengthPass = numberRange.value;
     lenghSelected.innerHTML = lengthPass
 }
 
-const formValues = document.getElementById('container-inputs')
-
 formValues.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const optionsChecked = []
     let passGenerated = ''
-    const passComplex = document.getElementById('passComplex')
 
     e.target.options.forEach(({ value, checked }) => {
         checked && optionsChecked.push(value)
@@ -39,13 +38,15 @@ formValues.addEventListener("submit", (e) => {
         return alert("Please select at least one option")
     }
 
-    for (let i = 0; i < lengthPass; i++) {
-        const itemSelected = items[optionsChecked[Math.floor(Math.random() * optionsChecked.length)]]
+    const optionChekedLength = optionsChecked.length
+    for (let i = 0, len = lengthPass; i < len; i++) {
+        const itemSelected = items[optionsChecked[Math.floor(Math.random() * optionChekedLength)]]
         passGenerated += itemSelected.charAt(Math.floor(Math.random() * itemSelected.length))
     }
 
-    passComplex.innerHTML = lengthPass >= 8 ? passComplexOptions[optionsChecked.length] : "Weak"
+    passComplex.innerHTML = lengthPass >= 8 ? passComplexOptions[optionChekedLength] : "Weak"
     passGen.innerHTML = passGenerated
+    optionsChecked.length = 0
 })
 
 const copyToClipboard = () => {
