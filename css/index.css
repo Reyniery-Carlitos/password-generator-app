@@ -89,6 +89,15 @@ main > h1{
     padding: 0.4em;
 }
 
+.footer{
+    color: white;
+}
+
+.footer > span{
+    font-size: 1em;
+    color: red
+}
+
 @media only screen and (max-width: 768px){
     #resultPass{
         width: 60%;
